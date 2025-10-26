@@ -1,4 +1,4 @@
-# VRUGD Cluster Setup Tools (Test)
+# VRUGD Cluster Setup Tools
 
 Unity プロジェクトに Cluster Creator Kit の導入・設定を全自動で行うエディタ拡張です。
 
