@@ -1,0 +1,37 @@
+name: Generate Changelog
+
+on:
+  push:
+    tags:
+      - 'v*.*.*' # バージョンタグが push されたとき
+
+jobs:
+  generate-changelog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js (必要に応じて)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install git-chglog
+        run: |
+          curl -sSL https://git.io/git-chglog | sh
+
+      - name: Generate CHANGELOG
+        run: |
+          TAG=$(git describe --tags --abbrev=0)
+          echo "Generating CHANGELOG for tag $TAG"
+          ./git-chglog -o Packages/com.vrugd.cluster.setup/CHANGELOG.md $TAG
+
+      - name: Commit and push CHANGELOG
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Packages/com.vrugd.cluster.setup/CHANGELOG.md
+          git commit -m "chore: update CHANGELOG for $TAG"
+          git push

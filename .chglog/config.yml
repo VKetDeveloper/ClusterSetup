@@ -1,0 +1,19 @@
+title: "Changelog"
+header: |
+  # Changelog
+  All notable changes to this project will be documented in this file.
+
+types:
+  - title: "Added"
+    type: "feat"
+  - title: "Fixed"
+    type: "fix"
+  - title: "Changed"
+    type: "chore"
+template: |
+  {{ range .Sections }}
+  ## {{ .Title }}
+  {{ range .Commits }}
+  - {{ .Subject }}
+  {{ end }}
+  {{ end }}
