@@ -81,7 +81,7 @@ public static class VRUGDClusterSetupTool
             EditorUtility.DisplayProgressBar("VRUGD Cluster セットアップ中", "Cluster Creator Kit を追加しています...", step += 0.33f);
             if (deps["mu.cluster.cluster-creator-kit"] == null)
             {
-                deps["mu.cluster.cluster-creator-kit"] = "latest";
+                deps["mu.cluster.cluster-creator-kit"] = "3.0.0";
                 Debug.Log("✅ mu.cluster.cluster-creator-kit を dependencies に追加しました。");
             }
 
