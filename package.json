@@ -1,6 +1,6 @@
 {
   "name": "com.vrugd.cluster.setup",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "VRUGD Cluster Setup Tools",
   "description": "Cluster Creator Kit の導入と設定を自動化する VRUGD 用 Unity エディタツール。",
   "unity": "6000.2",
@@ -12,5 +12,9 @@
     "Setup",
     "Automation",
     "VRUGD"
-  ]
+  ],
+  "category": "Editor",
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "3.2.1"
+  }
 }

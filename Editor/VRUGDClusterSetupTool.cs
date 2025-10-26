@@ -11,7 +11,6 @@ public static class VRUGDClusterSetupTool
 
     static VRUGDClusterSetupTool()
     {
-        // Unity起動後に一度だけ実行
         EditorApplication.update += OnEditorStartup;
     }
 
@@ -63,16 +62,8 @@ public static class VRUGDClusterSetupTool
 
             float step = 0f;
 
-            // 1️⃣ Newtonsoft.Json
-            EditorUtility.DisplayProgressBar("VRUGD Cluster セットアップ中", "Newtonsoft.Json を追加しています...", step += 0.25f);
-            if (deps["com.unity.nuget.newtonsoft-json"] == null)
-            {
-                deps["com.unity.nuget.newtonsoft-json"] = "3.2.1";
-                Debug.Log("📦 Newtonsoft.Json を追加しました。");
-            }
-
-            // 2️⃣ Scoped Registry
-            EditorUtility.DisplayProgressBar("VRUGD Cluster セットアップ中", "Scoped Registry を追加しています...", step += 0.25f);
+            // 1️⃣ Scoped Registry
+            EditorUtility.DisplayProgressBar("VRUGD Cluster セットアップ中", "Scoped Registry を追加しています...", step += 0.33f);
             bool hasRegistry = scopedRegs.Any(r => r["name"]?.ToString() == "Cluster");
             if (!hasRegistry)
             {
@@ -86,20 +77,20 @@ public static class VRUGDClusterSetupTool
                 Debug.Log("✅ Scoped Registry を追加しました。");
             }
 
-            // 3️⃣ mu.cluster.cluster-creator-kit
-            EditorUtility.DisplayProgressBar("VRUGD Cluster セットアップ中", "Cluster Creator Kit を追加しています...", step += 0.25f);
+            // 2️⃣ mu.cluster.cluster-creator-kit
+            EditorUtility.DisplayProgressBar("VRUGD Cluster セットアップ中", "Cluster Creator Kit を追加しています...", step += 0.33f);
             if (deps["mu.cluster.cluster-creator-kit"] == null)
             {
                 deps["mu.cluster.cluster-creator-kit"] = "latest";
                 Debug.Log("✅ mu.cluster.cluster-creator-kit を dependencies に追加しました。");
             }
 
-            // manifest.json 保存
+            // 書き戻し
             File.WriteAllText(manifestPath, jObj.ToString());
             AssetDatabase.Refresh();
 
-            // 4️⃣ Color Space 設定
-            EditorUtility.DisplayProgressBar("VRUGD Cluster セットアップ中", "Color Space を Linear に変更しています...", step += 0.25f);
+            // 3️⃣ Color Space 設定
+            EditorUtility.DisplayProgressBar("VRUGD Cluster セットアップ中", "Color Space を Linear に変更しています...", step += 0.34f);
             if (PlayerSettings.colorSpace != ColorSpace.Linear)
             {
                 PlayerSettings.colorSpace = ColorSpace.Linear;
