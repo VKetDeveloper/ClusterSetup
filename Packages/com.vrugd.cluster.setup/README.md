@@ -15,6 +15,6 @@ Unity プロジェクトに Cluster Creator Kit の導入・設定を全自動�
 
    ```json
    "dependencies": {
-     "com.vrugd.cluster.setup": "https://github.com/VKetDeveloper/ClusterSetup.git"
+     "com.vrugd.cluster.setup": "https://github.com/VKetDeveloper/ClusterSetup.git?path=Packages/com.vrugd.cluster.setup"
    }
 
