@@ -11,10 +11,13 @@ Unity プロジェクトに Cluster Creator Kit の導入・設定を全自動�
 
 ## 🚀 使い方
 
-1. `Packages/manifest.json` に次を追加します：
+1. UnityのPackage Managerを開きます。
+2. ステータスバーの Add  ボタンをクリックします。
+3. パッケージを加えるためのオプションが表示されます。
+4. ドロップダウンから Add package from git URL を選択します。テキストフィールドと Add ボタンが表示されます。
 
-   ```json
-   "dependencies": {
-     "com.vrugd.cluster.setup": "https://github.com/VKetDeveloper/ClusterSetup.git?path=Packages/com.vrugd.cluster.setup"
-   }
+5. テキストフィールドに以下のURLを入力し、Add をクリックします。
 
+```
+  https://github.com/VKetDeveloper/ClusterSetup.git?path=Packages/com.vrugd.cluster.setup
+```
