@@ -1,11 +1,11 @@
 {
   "name": "com.vrugd.cluster.setup",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "displayName": "VRUGD Cluster Setup Tools",
   "description": "Cluster Creator Kit 導入と設定を自動化する Unity エディタツール（公開テスト用）",
   "unity": "6000.2",
   "author": {
-    "name": "VRUGD Team"
+    "name": "VRUGD"
   },
   "keywords": [
     "Cluster",
