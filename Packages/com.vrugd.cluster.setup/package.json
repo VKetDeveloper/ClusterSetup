@@ -1,8 +1,8 @@
 {
   "name": "com.vrugd.cluster.setup",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "displayName": "VRUGD Cluster Setup Tools",
-  "description": "Cluster Creator Kit 導入と設定を自動化する Unity エディタツール（公開テスト用）",
+  "description": "Cluster Creator Kit 導入と設定を自動化する Unity エディタツールです。VRChat用ワールドをクラスターワールドとして簡単にセットアップできます。",
   "unity": "6000.2",
   "author": {
     "name": "VRUGD"
